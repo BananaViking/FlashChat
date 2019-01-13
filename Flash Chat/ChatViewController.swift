@@ -13,8 +13,6 @@ class ChatViewController: UIViewController {
     
     // Declare instance variables here
 
-    
-    // We've pre-linked the IBOutlets
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var messageTextfield: UITextField!
