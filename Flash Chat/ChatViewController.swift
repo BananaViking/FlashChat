@@ -23,7 +23,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         //TODO: Set yourself as the delegate of the text field here:
-//        messageTextfield.delegate = self
         
         
         //TODO: Set the tapGesture here:
@@ -35,7 +34,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         configureTableView()
     }
 
-    ///////////////////////////////////////////
     
     //MARK: - TableView DataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,8 +60,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.estimatedRowHeight = 120.0
     }
     
-    
-    ///////////////////////////////////////////
     
     //MARK:- TextField Delegate Methods
     
