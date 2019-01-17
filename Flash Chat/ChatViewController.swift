@@ -20,11 +20,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         messageTableView.delegate = self
         messageTableView.dataSource = self
-        
         messageTextfield.delegate = self
         
-        //TODO: Set the tapGesture here:
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        messageTableView.addGestureRecognizer(tapGesture)
         
 
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
@@ -48,10 +47,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    
-    //TODO: Declare tableViewTapped here:
-    
-    
+    @objc func tableViewTapped() {
+        messageTextfield.endEditing(true)
+    }
     
     func configureTableView() {
         messageTableView.rowHeight = UITableViewAutomaticDimension
@@ -77,12 +75,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //TODO: Declare textFieldDidEndEditing here:
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraint.constant = 50
+            self.view.layoutIfNeeded()
+        }
     }
     
     //MARK: - Send & Recieve from Firebase
     @IBAction func sendPressed(_ sender: AnyObject) {
-        
         
         //TODO: Send the message to Firebase and save it in our database
         
