@@ -33,6 +33,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         configureTableView()
         retrieveMessages()
+        
+        messageTableView.separatorStyle = .none
     }
 
     
@@ -61,11 +63,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK:- TextField Delegate Methods
-    
-    
-
-    
-    //TODO: Declare textFieldDidBeginEditing here:
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         UIView.animate(withDuration: 0.5) {
@@ -106,7 +103,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    //TODO: Create the retrieveMessages method here:
     func retrieveMessages() {
         let messageDB = Database.database().reference().child("Messages")
         
